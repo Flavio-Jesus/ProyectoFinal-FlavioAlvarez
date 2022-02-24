@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ProyectoFinal_FlavioAlvarez.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,35 @@ namespace ProyectoFinal_FlavioAlvarez
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddSingleton<ICosmosDBServiceMaquina>(InitializeCosmosClientInstanceMAsync(Configuration.GetSection("CosmosDb")).GetAwaiter().GetResult());
+            services.AddSingleton<ICosmosDBServiceProducto>(InitializeCosmosClientInstancePAsync(Configuration.GetSection("CosmosDb")).GetAwaiter().GetResult());
+        }
+
+        public static async Task<CosmosDBServiceMaquina> InitializeCosmosClientInstanceMAsync(IConfigurationSection configurationSection)
+        {
+            string databaseName = configurationSection.GetSection("DatabaseName").Value;
+            string containerName = configurationSection.GetSection("ContainerNameMaquina").Value;
+            string account = configurationSection.GetSection("Account").Value;
+            string key = configurationSection.GetSection("Key").Value;
+            Microsoft.Azure.Cosmos.CosmosClient client = new Microsoft.Azure.Cosmos.CosmosClient(account, key);
+            CosmosDBServiceMaquina cosmosDBService = new CosmosDBServiceMaquina(client, databaseName, containerName);
+            Microsoft.Azure.Cosmos.DatabaseResponse database = await client.CreateDatabaseIfNotExistsAsync(databaseName);
+            await database.Database.CreateContainerIfNotExistsAsync(containerName, "/id");
+
+            return cosmosDBService;
+        }
+        public static async Task<CosmosDBServiceProducto> InitializeCosmosClientInstancePAsync(IConfigurationSection configurationSection)
+        {
+            string databaseName = configurationSection.GetSection("DatabaseName").Value;
+            string containerName = configurationSection.GetSection("ContainerNameProducto").Value;
+            string account = configurationSection.GetSection("Account").Value;
+            string key = configurationSection.GetSection("Key").Value;
+            Microsoft.Azure.Cosmos.CosmosClient client = new Microsoft.Azure.Cosmos.CosmosClient(account, key);
+            CosmosDBServiceProducto cosmosDBService = new CosmosDBServiceProducto(client, databaseName, containerName);
+            Microsoft.Azure.Cosmos.DatabaseResponse database = await client.CreateDatabaseIfNotExistsAsync(databaseName);
+            await database.Database.CreateContainerIfNotExistsAsync(containerName, "/id");
+
+            return cosmosDBService;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

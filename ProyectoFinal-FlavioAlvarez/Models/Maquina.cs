@@ -11,20 +11,20 @@ namespace ProyectoFinal_FlavioAlvarez.Models
         [JsonProperty(PropertyName = "id")]
         public string id { get; set; }
 
-        [JsonProperty(PropertyName = "cant_producto_x_hora")]
-        public int cant_producto_x_hora { get; set; }
+        [JsonProperty(PropertyName = "cantProductHora")]
+        public int cantProductHora { get; set; }
 
-        [JsonProperty(PropertyName = "costo_operacion_x_hora")]
-        public double costo_operacion_x_hora { get; set; }
+        [JsonProperty(PropertyName = "costoOperacionHora")]
+        public double costoOperacionHora { get; set; }
 
-        [JsonProperty(PropertyName = "probabilidad_fallo")]
-        public double probabilidad_fallo { get; set; }
+        [JsonProperty(PropertyName = "probabilidadFallo")]
+        public double probabilidadFallo { get; set; }
 
-        [JsonProperty(PropertyName = "horas_en_reparacion")]
-        public double horas_en_reparacion { get; set; }
+        [JsonProperty(PropertyName = "horasReparacion")]
+        public double horasReparacion { get; set; }
 
-        [JsonProperty(PropertyName = "fecha_de_compra")]
-        public DateTime fecha_de_compra { get; set; }
+        [JsonProperty(PropertyName = "fechaCompra")]
+        public DateTime fechaCompra { get; set; }
 
         [JsonProperty(PropertyName = "estado")]
         public Boolean estado { get; set; }

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ProyectoFinal_FlavioAlvarez.Models.Maquina>
+
+@{
+    ViewData["Title"] = "Maquina";
+}
+
+<h1>Maquina</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cantProductHora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.costoOperacionHora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.probabilidadFallo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.horasReparacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fechaCompra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cantProductHora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.costoOperacionHora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.probabilidadFallo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.horasReparacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaCompra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estado)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", item) |
+                @Html.ActionLink("Delete", "Delete", item)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
