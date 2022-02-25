@@ -10,11 +10,9 @@ namespace ProyectoFinal_FlavioAlvarez.Models
     {
         [JsonProperty(PropertyName = "id")]
         public string id { get; set; }
-
         [JsonProperty(PropertyName = "nombre")]
         public string nombre { get; set; }
-
         [JsonProperty(PropertyName = "precio")]
-        public double precio { get; set; }
+        public int precio { get; set; }
     }
 }

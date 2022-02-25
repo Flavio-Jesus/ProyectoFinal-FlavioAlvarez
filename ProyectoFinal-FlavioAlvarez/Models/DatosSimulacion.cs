@@ -8,6 +8,14 @@ namespace ProyectoFinal_FlavioAlvarez.Models
 {
     public class DatosSimulacion
     {
+        public DatosSimulacion()
+        {
+            maquina1 = "";
+            maquina2 = "";
+            producto = "";
+            maquyinaRecomendad = "";
+            id = "";
+        }
         [JsonProperty(PropertyName = "id")]
         public string id { get; set; }
 
@@ -57,6 +65,6 @@ namespace ProyectoFinal_FlavioAlvarez.Models
         public int ganaciaRealM2 { get; set; }
 
         [JsonProperty(PropertyName = "maquyinaRecomendad")]
-        public string Maquina_Recomendada { get; set; }
+        public string maquyinaRecomendad { get; set; }
     }
 }
