@@ -23,10 +23,14 @@ namespace ProyectoFinal_FlavioAlvarez.Controllers
         // GET: ControladorSimulacion
         public ActionResult Simulacion()
         {
-            IEnumerable<DatosSimulacion> simulaciones = this._cosmosDBServiceSimulacion.GetSimulatioAsync("SELECT * FROM datossimulacion").Result;
-            var simulacionResult = simulaciones.ToList();
-            return View(simulacionResult[(simulaciones.ToList().Count() - 1)]);
+            IEnumerable<DatosSimulacion> simulacion = this._cosmosDBServiceSimulacion.GetSimulatioAsync("SELECT * FROM datossimulacion").Result;
+            var simulacionResult = simulacion.ToList().Last();
+            return View(simulacionResult);
 
+        }
+        public async Task<ActionResult> SimulacionList()
+        {
+            return View((await this._cosmosDBServiceSimulacion.GetSimulatioAsync("SELECT * FROM datossimulacion")).ToList());
         }
 
         public IActionResult Create()
@@ -89,13 +93,14 @@ namespace ProyectoFinal_FlavioAlvarez.Controllers
             {
                 totalHorasTrabajadas += modelo.simulacion.canHorasProduccionDiarias;
             }
-
+            int restaMaquina1 = maquina1.costoOperacionHora * totalHorasTrabajadas;
+            int restaMaquina2 = maquina2.costoOperacionHora * totalHorasTrabajadas;
             modelo.simulacion.canProductosM1 = maquina1.cantProductHora * totalHorasTrabajadas;
             modelo.simulacion.canProductosM2 = maquina2.cantProductHora * totalHorasTrabajadas;
             modelo.simulacion.gananciaM1 = (modelo.simulacion.canProductosM1 * producto.precio);
             modelo.simulacion.gananciaM2 = (modelo.simulacion.canProductosM2 * producto.precio);
-            modelo.simulacion.ganaciaRealM1 = (modelo.simulacion.gananciaM1 - (modelo.simulacion.canProductosM1 * modelo.simulacion.precioProducto));
-            modelo.simulacion.ganaciaRealM2 = (modelo.simulacion.gananciaM2 - (modelo.simulacion.canProductosM2 * modelo.simulacion.precioProducto));
+            modelo.simulacion.ganaciaRealM1 = ((modelo.simulacion.gananciaM1 - (modelo.simulacion.canProductosM1 * modelo.simulacion.precioProducto)))-restaMaquina1;
+            modelo.simulacion.ganaciaRealM2 = ((modelo.simulacion.gananciaM2 - (modelo.simulacion.canProductosM2 * modelo.simulacion.precioProducto)))-restaMaquina2;
             modelo.simulacion.maquyinaRecomendad = modelo.simulacion.ganaciaRealM1 > modelo.simulacion.ganaciaRealM2 ? maquina1.id : maquina2.id;
             await this._cosmosDBServiceSimulacion.AddSimulationtoAsync(modelo.simulacion);
             return RedirectToAction("Simulacion");

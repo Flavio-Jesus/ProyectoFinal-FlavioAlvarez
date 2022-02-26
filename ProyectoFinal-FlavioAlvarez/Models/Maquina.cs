@@ -15,7 +15,7 @@ namespace ProyectoFinal_FlavioAlvarez.Models
         public int cantProductHora { get; set; }
 
         [JsonProperty(PropertyName = "costoOperacionHora")]
-        public double costoOperacionHora { get; set; }
+        public int costoOperacionHora { get; set; }
 
         [JsonProperty(PropertyName = "probabilidadFallo")]
         public double probabilidadFallo { get; set; }

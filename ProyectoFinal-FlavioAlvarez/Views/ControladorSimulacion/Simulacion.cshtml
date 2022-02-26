@@ -1,128 +1,73 @@
-﻿@model IEnumerable<ProyectoFinal_FlavioAlvarez.Models.DatosSimulacion>
+﻿@model ProyectoFinal_FlavioAlvarez.Models.DatosSimulacion
 
 @{
     ViewData["Title"] = "Simulacion";
 }
 
-<h1>Simulacion</h1>
+<h1>Resultados de simulación</h1>
 
-<p>
-    <a asp-action="Create">Realizar Simulacion</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.canDiasProduccionSemanal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.canHorasProduccionDiarias)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.canMes)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.canDias)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.canHoras)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.precioProducto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.maquina1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.maquina2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.producto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.canProductosM1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.canProductosM2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.gananciaM1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.gananciaM2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ganaciaRealM1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ganaciaRealM2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.maquyinaRecomendad)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.canDiasProduccionSemanal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.canHorasProduccionDiarias)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.canMes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.canDias)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.canHoras)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.precioProducto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.maquina1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.maquina2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.producto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.canProductosM1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.canProductosM2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.gananciaM1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.gananciaM2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ganaciaRealM1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ganaciaRealM2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.maquyinaRecomendad)
-            </td>
-            <td>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div>
+    <table class="table">
+        <tbody>
+            <div class="container mt-1 mb-3">
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <h4 class="card-card-text">Maquina 1</h4>
+                            <div class="card-text">
+                                <h5 class="card-title">Cantidad de productos </h5>
+                                @Html.DisplayFor(model => model.canProductosM1)
+                            </div>
+                            <div class="card-text">
+                                <h5 class="card-title">Ganancias Butas </h5>
+                                @Html.DisplayFor(model => model.gananciaM1)
+                            </div>
+                            <div class="card-text">
+                                <h5 class="card-title">Ganancia Real </h5>
+                                @Html.DisplayFor(model => model.ganaciaRealM1)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mb-1">
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <h4 class="card-text">Maquina 2</h4>
+                            <div class="card-text">
+                                <h5 class="card-title">Cantidad de productos </h5>
+                                @Html.DisplayFor(model => model.canProductosM2)
+                            </div>
+                            <div class="card-text">
+                                <h5 class="card-title">Ganancias Butas </h5>
+                                @Html.DisplayFor(model => model.gananciaM2)
+                            </div>
+                            <div class="card-text">
+                                <h5 class="card-title">Ganancia Real </h5>
+                                @Html.DisplayFor(model => model.ganaciaRealM2)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+<div class="container mt-1 mb-3">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <h4 class="card-text">Maquina Recomendada</h4>
+                <div class="card-text">
+                    @Html.DisplayFor(model => model.maquyinaRecomendad)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-controller="Home" asp-action="Index">Inicio</a>
+</div>

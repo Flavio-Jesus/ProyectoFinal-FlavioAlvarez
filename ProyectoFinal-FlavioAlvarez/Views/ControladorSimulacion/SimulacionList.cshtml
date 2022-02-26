@@ -1,0 +1,131 @@
+﻿@model IEnumerable<ProyectoFinal_FlavioAlvarez.Models.DatosSimulacion>
+
+@{
+    ViewData["Title"] = "SimulacionList";
+}
+
+<h1>SimulacionList</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.canHoras)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.canDias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.canMes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.canDiasProduccionSemanal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.canHorasProduccionDiarias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precioProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.maquina1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.maquina2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.producto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.canProductosM1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.canProductosM2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gananciaM1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gananciaM2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ganaciaRealM1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ganaciaRealM2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.maquyinaRecomendad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.canHoras)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.canDias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.canMes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.canDiasProduccionSemanal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.canHorasProduccionDiarias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precioProducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.maquina1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.maquina2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.producto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.canProductosM1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.canProductosM2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gananciaM1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gananciaM2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ganaciaRealM1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ganaciaRealM2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.maquyinaRecomendad)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

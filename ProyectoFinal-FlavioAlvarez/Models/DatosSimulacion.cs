@@ -31,7 +31,7 @@ namespace ProyectoFinal_FlavioAlvarez.Models
         [JsonProperty(PropertyName = "id")]
         public string id { get; set; }
 
-        [JsonProperty(PropertyName = "canHora")]
+        [JsonProperty(PropertyName = "canHoras")]
         public int canHoras { get; set; }
 
         [JsonProperty(PropertyName = "canDias")]
