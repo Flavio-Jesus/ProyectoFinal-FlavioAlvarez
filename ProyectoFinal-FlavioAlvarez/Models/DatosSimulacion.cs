@@ -15,24 +15,36 @@ namespace ProyectoFinal_FlavioAlvarez.Models
             producto = "";
             maquyinaRecomendad = "";
             id = "";
+            ganaciaRealM2 = 0;
+            ganaciaRealM1 = 0;
+            gananciaM2 = 0;
+            gananciaM1 = 0;
+            canProductosM2 = 0;
+            canProductosM1 = 0;
+            precioProducto = 0;
+            canHorasProduccionDiarias = 0;
+            canDiasProduccionSemanal = 0;
+            canMes = 0;
+            canDias = 0;
+            canHoras = 0;
         }
         [JsonProperty(PropertyName = "id")]
         public string id { get; set; }
+
+        [JsonProperty(PropertyName = "canHora")]
+        public int canHoras { get; set; }
+
+        [JsonProperty(PropertyName = "canDias")]
+        public int canDias { get; set; }
+
+        [JsonProperty(PropertyName = "canMes")]
+        public int canMes { get; set; }
 
         [JsonProperty(PropertyName = "canDiasProduccionSemanal")]
         public int canDiasProduccionSemanal { get; set; }
 
         [JsonProperty(PropertyName = "canHorasProduccionDiarias")]
         public int canHorasProduccionDiarias { get; set; }
-
-        [JsonProperty(PropertyName = "canMes")]
-        public int canMes { get; set; }
-
-        [JsonProperty(PropertyName = "canDias")]
-        public int canDias { get; set; }
-
-        [JsonProperty(PropertyName = "canHoras ")]
-        public int canHoras { get; set; }
 
         [JsonProperty(PropertyName = "precioProducto")]
         public int precioProducto { get; set; }

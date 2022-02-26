@@ -28,6 +28,7 @@ namespace ProyectoFinal_FlavioAlvarez.Controllers
         public async Task<ActionResult> CrearMaquina(Maquina maquina)
         {
             maquina.id = Guid.NewGuid().ToString();
+            maquina.probabilidadFallo = (new Random().Next(1, 11) / 10.00);
             await this._cosmosDBService.AddMaquinaAsync(maquina);
             return RedirectToAction("Maquina");
         }
