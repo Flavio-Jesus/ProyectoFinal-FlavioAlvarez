@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "cosmosdb1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.DocumentDB/databaseAccounts/proyectofinaldbfam",
+      "type": "cosmosdb.azure",
+      "connectionId": "AccountEndpoint=https://proyectofinaldbfam.documents.azure.com:443/;AccountKey=t0eW0gBvz0TruLnIaBdVzdtdWOxXpN5ckpFM0GjC61BYg1nfiPHkZD8DifGThiu3TrBgYuEgKAm6Pg7BuCJJRw==;",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}

@@ -2,7 +2,7 @@
   "dependencies": {
     "cosmosdb1": {
       "type": "cosmosdb",
-      "connectionId": "AccountEndpoint=https://proyectodbfjam.documents.azure.com:443/;AccountKey=TnQLEdlSerz4s0K7TgqbsNYRGrNBgp3jGJmcsT6z1lmzuIsQqXea8O7jwaxG7iQ5mnZ9D0tHj4PMnZWKFCgNvg==;"
+      "connectionId": "AccountEndpoint=https://proyectofinaldbfam.documents.azure.com:443/;AccountKey=t0eW0gBvz0TruLnIaBdVzdtdWOxXpN5ckpFM0GjC61BYg1nfiPHkZD8DifGThiu3TrBgYuEgKAm6Pg7BuCJJRw==;"
     }
   }
 }

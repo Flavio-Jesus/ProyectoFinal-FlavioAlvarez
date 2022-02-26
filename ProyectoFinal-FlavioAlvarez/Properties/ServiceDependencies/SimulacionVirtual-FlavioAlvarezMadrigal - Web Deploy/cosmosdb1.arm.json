@@ -4,7 +4,7 @@
   "parameters": {
     "resourceGroupName": {
       "type": "string",
-      "defaultValue": "UCENFOTEC",
+      "defaultValue": "ProyectoFinal",
       "metadata": {
         "_parameterType": "resourceGroup",
         "description": "Name of the resource group for the resource. It is recommended to put resources under same resource group for better tracking."
@@ -12,7 +12,7 @@
     },
     "resourceGroupLocation": {
       "type": "string",
-      "defaultValue": "southcentralus",
+      "defaultValue": "centralus",
       "metadata": {
         "_parameterType": "location",
         "description": "Location of the resource group. Resource groups could have different location than resources."
@@ -36,7 +36,7 @@
     },
     {
       "type": "Microsoft.Resources/deployments",
-      "name": "[concat(parameters('resourceGroupName'), 'Deployment', uniqueString(concat('proyectodbfjam', subscription().subscriptionId)))]",
+      "name": "[concat(parameters('resourceGroupName'), 'Deployment', uniqueString(concat('proyectofinaldbfam', subscription().subscriptionId)))]",
       "resourceGroup": "[parameters('resourceGroupName')]",
       "apiVersion": "2019-10-01",
       "dependsOn": [
@@ -49,12 +49,12 @@
           "contentVersion": "1.0.0.0",
           "resources": [
             {
-              "name": "proyectodbfjam",
+              "name": "proyectofinaldbfam",
               "location": "[parameters('resourceLocation')]",
               "type": "Microsoft.DocumentDB/databaseAccounts",
               "kind": "GlobalDocumentDB",
               "systemData": {
-                "createdAt": "2022-02-23T00:56:17.0195326Z"
+                "createdAt": "2022-02-25T22:12:56.7036829Z"
               },
               "properties": {
                 "databaseAccountOfferType": "Standard"
