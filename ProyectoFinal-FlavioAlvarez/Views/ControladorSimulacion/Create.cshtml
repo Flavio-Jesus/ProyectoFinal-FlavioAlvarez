@@ -13,47 +13,47 @@
         <form asp-action="CreateSimulacion">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="@Model.simulacion.canHoras" class="control-label"></label>
+                <label asp-for="@Model.simulacion.canHoras" class="control-label">Cantidad Horas</label>
                 <input asp-for="@Model.simulacion.canHoras" class="form-control" />
                 <span asp-validation-for="@Model.simulacion.canHoras"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.simulacion.canDias" class="control-label"></label>
+                <label asp-for="@Model.simulacion.canDias" class="control-label">Cantidad Dias</label>
                 <input asp-for="@Model.simulacion.canDias" class="form-control" />
                 <span asp-validation-for="@Model.simulacion.canDias" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.simulacion.canMes" class="control-label"></label>
+                <label asp-for="@Model.simulacion.canMes" class="control-label">Cantidad Meses</label>
                 <input asp-for="@Model.simulacion.canMes" class="form-control" />
                 <span asp-validation-for="@Model.simulacion.canMes" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.simulacion.canDiasProduccionSemanal" class="control-label"></label>
+                <label asp-for="@Model.simulacion.canDiasProduccionSemanal" class="control-label">Cantidad Dias Produccion Semanal</label>
                 <input asp-for="@Model.simulacion.canDiasProduccionSemanal" class="form-control" />
                 <span asp-validation-for="@Model.simulacion.canDiasProduccionSemanal" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.simulacion.canHorasProduccionDiarias" class="control-label"></label>
+                <label asp-for="@Model.simulacion.canHorasProduccionDiarias" class="control-label">Cantidad Horas Produccion Diarias</label>
                 <input asp-for="@Model.simulacion.canHorasProduccionDiarias" class="form-control" />
                 <span asp-validation-for="@Model.simulacion.canHorasProduccionDiarias" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.simulacion.precioProducto" class="control-label"></label>
+                <label asp-for="@Model.simulacion.precioProducto" class="control-label">Precio Producto</label>
                 <input asp-for="@Model.simulacion.precioProducto" class="form-control" />
                 <span asp-validation-for="@Model.simulacion.precioProducto" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.simulacion.maquina1" class="control-label"></label>
+                <label asp-for="@Model.simulacion.maquina1" class="control-label">Maquina 1</label>
                 @Html.DropDownListFor(x => Model.simulacion.maquina1, new SelectList(Model.maquina, "id", "id"), htmlAttributes: new { @class = "form-control", id = "id" })
                 <span asp-validation-for="@Model.simulacion.maquina1" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.simulacion.maquina2" class="control-label"></label>
+                <label asp-for="@Model.simulacion.maquina2" class="control-label">Maquina 2</label>
                 @Html.DropDownListFor(x => Model.simulacion.maquina2, new SelectList(Model.maquina, "id", "id"), htmlAttributes: new { @class = "form-control", id = "id" })
                 <span asp-validation-for="@Model.simulacion.maquina2" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.simulacion.producto" class="control-label"></label>
+                <label asp-for="@Model.simulacion.producto" class="control-label">Producto</label>
                 @Html.DropDownListFor(x => Model.simulacion.producto, new SelectList(Model.producto, "id", "nombre"), htmlAttributes: new { @class = "form-control", id = "id" })
                 <span asp-validation-for="@Model.simulacion.producto" class="text-danger"></span>
             </div>
